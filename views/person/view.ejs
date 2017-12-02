@@ -1,0 +1,17 @@
+<div class="container">
+               <div class="col-12 col-md-6 col-xl-6">
+                   <img src="<%=person.imageUrl%>" width="500px" height="350px"class="rounded float-left" alt="images">
+               </div>
+                <div style="float:right" class=" col-xl-6 col-md-6 col-sm-12 ">
+                <ul class="list-group">
+                <li class="list-group-item"><%=person.city%></li>
+                <li class="list-group-item">Class:<%=person.class%></li>
+                <li class="list-group-item">Price:<%=person.price%></li>
+                <li class="list-group-item">Quota left:<%=person.overallQuota%></li>
+                <li class="list-group-item">Valid till:<%=person.dataValidTill%></li>
+                <li class="list-group-item">Dates:<%=person.travelDates%></li>
+                </ul>
+                <a href="/yang/buy?username=<%=req.session.username %>&cityname=<%= person.city %>&personid=<%=person.id%>&packagedate=<%=person.travelDates%>&packageclass=<%=person.class%>" class="btn btn-primary btn-lg btn-block">Buy this package</a>
+                </div>
+
+</div>

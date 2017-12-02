@@ -1,0 +1,135 @@
+<script>
+var onchange = function (){
+  var region = document.getElementById("region").value;
+
+var zodiac = document.getElementById("city");
+zodiac.options.length = 0;
+
+if (region == "East Asia") {
+
+    var option = document.createElement("option");
+    option.text = "Qsaka";
+    option.value = "Qsaka";
+    zodiac.add(option);
+
+    var option = document.createElement("option");
+    option.text = "Seoul";
+    option.value = "Seoul";
+    zodiac.add(option);
+
+    zodiac.disabled = false;
+    
+} else if (region == "South-east Asia") {
+
+    var option = document.createElement("option");
+    option.text = "Cebu";
+    option.value = "Cebu";
+    zodiac.add(option);
+
+    var option = document.createElement("option");
+    option.text = "Singapore";
+    option.value = "Singapore";
+    zodiac.add(option);
+
+    zodiac.disabled = false;
+
+} else if (region == "Americas") {
+
+    var option = document.createElement("option");
+    option.text = "Los Aageles";
+    option.value = "Los Aageles";
+    zodiac.add(option);
+
+    var option = document.createElement("option");
+    option.text = "Boston";
+    option.value = "Boston";
+    zodiac.add(option);
+    
+} else {
+    zodiac.disabled = true;
+}
+}
+</script>
+
+
+
+
+
+
+
+  <div class="row">
+    <form class="col-xl-12" method="POST">
+       <div class="h4 ">Fare Create From</div>
+      <div class="row">
+
+        <div class="left-from col-xl-6 col-md-6">
+
+          <div class="form-group">
+            <label for="region">Region</label>
+            <select  name="region" class="form-control" id="region" onchange="onchange()">
+              <option value="East Asia">East Asia</option>
+              <option value="South-east Asia">South-east Asia</option>
+              <option value="Americas">Americas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <select class="form-control" name="city" id="city">
+              <option value="Qsaka">Qsaka</option>
+              <option value="Seoul" >Seoul</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="class">Class</label>
+            <select class="form-control" name="class" id="class">
+              <option value="Economy">Economy</option>
+              <option value="Business">Business</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="price">Price</label>
+              <input type="text" name="price" class="form-control" id="price" >
+            </div>
+        </div>
+        <div class="right-from col-xl-6 col-md-6">
+          <div class="form-group">
+             <label for="image">Image Url</label>
+             <input type="text" name="imageUrl"  class="form-control" id="image" >
+           </div>
+           <div class="form-group">
+              <label for="dealValidTill">Deal Valid Till</label>
+              <input type="text" name="dataValidTill" class="form-control" id="dealValidTill" >
+            </div>
+            <div class="form-group">
+                <label for="overallQuota">Overall Quota</label>
+                <input type="number" name="overallQuota" class="form-control" id="overallQuota" >
+              </div>
+              <div class="form-group">
+                 <label for="dates">Dates</label>
+                 <input type="text" name="travelDates" class="form-control" id="dates" >
+               </div>
+        </div>
+
+<input type="submit" value="Submit" class="btn btn-primary btn-lg active col-xl-12">
+      </div>
+
+
+    </form>
+
+  </div>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/js/moment.min.js"></script>    
+        <script src="/js/bootstrap-datepicker.min.js"></script>
+            <script src="/js/daterangepicker.js"></script>
+  <script src="/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+  <script src="/js/moment.min.js"></script>    
+              <script src="/js/daterangepicker.js"></script>
+  <script>
+                $("#dealValidTill").datepicker({
+            defaultViewDate: { year: 2017, month: 10, day: 28}
+        });
+  $("#dates").daterangepicker({
+          "startDate": "01/01/2017",
+          "endDate": "12/30/2017"
+      });
+    </script>
